@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="integrationTest.properties" />
+    </bean>
+
+    <bean id="client" class="org.gephi.streaming.client.GephiStreamingApacheClient">
+        <constructor-arg name="config" ref="config" />
+        <constructor-arg name="client" ref="httpClient" />
+    </bean>
+    
+    <bean id="config" class="org.gephi.streaming.client.model.GephiClientConfig">
+        <property name="url" value="${gephi.url}" />
+        <!-- 
+        <property name="username" value="${gephi.username}" />
+        <property name="password" value="${gephi.password}" />
+         -->
+    </bean>
+    
+    <bean id="httpClient" class="org.apache.http.impl.client.DefaultHttpClient">
+        <constructor-arg>
+            <bean class="org.apache.http.impl.conn.PoolingClientConnectionManager"/>
+        </constructor-arg>
+    </bean>
+
+</beans>
