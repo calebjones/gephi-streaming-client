@@ -14,10 +14,10 @@
     
     <bean id="config" class="org.gephi.streaming.client.model.GephiClientConfig">
         <property name="url" value="${gephi.url}" />
-        <!-- 
+        <!--
         <property name="username" value="${gephi.username}" />
         <property name="password" value="${gephi.password}" />
-         -->
+        -->
     </bean>
     
     <bean id="httpClient" class="org.apache.http.impl.client.DefaultHttpClient">
