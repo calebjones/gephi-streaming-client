@@ -8,7 +8,7 @@ This is a Java client implementation of the [Gephi Streaming Plugin web API](htt
 
 See the [Gephi Streaming Plugin example usage](http://wiki.gephi.org/index.php/Graph_Streaming#Gephi_as_Master) 
 for how to configure Gephi to act as a master server. Once Gephi has a master server running with a workspace
-attached to it (`workspace0` in this example), the following example code will create a simple square 
+attached to it (`workspace0` in this example), the following example code will create a simple star 
 network.
 
     // setup
@@ -21,21 +21,38 @@ network.
     GephiStreamingClient client = 
         new GephiStreamingApacheClient(config, httpClient);
 
-    // create 4 nodes
-    client.addNode(new Node().withId("A”).withLabel("A Node”).withSize(5L));
-    client.addNode(new Node().withId("B”).withLabel("B Node”).withSize(6L));
-    client.addNode(new Node().withId("C”).withLabel("C Node”).withSize(7L));
-    client.addNode(new Node().withId("D”).withLabel("D Node”).withSize(8L));
-    
-    // add edges
-    client.addEdge(new Edge("A-B", "A", "B", false, 1L));
-    client.addEdge(new Edge("B-C", "B", "C", false, 2L));
-    client.addEdge(new Edge(“C-D", “C", "D", false, 3L));
-    client.addEdge(new Edge(“D-A", “D", “A", false, 4L));
+	// nodes
+	client.addNode(new Node("A", "A Node", 1L));
+	client.addNode(new Node("B", "B Node", 1L));
+	client.addNode(new Node("C", "C Node", 1L));
+	client.addNode(new Node("D", "D Node", 1L));
+	client.addNode(new Node("E", "E Node", 1L));
+	client.addNode(new Node("F", "F Node", 1L));
+	client.addNode(new Node("G", "G Node", 1L));
+	client.addNode(new Node("H", "H Node", 1L));
+	client.addNode(new Node("I", "I Node", 1L));
+	client.addNode(new Node("J", "J Node", 1L));
+	
+	// edges
+	client.addEdge(new Edge("A-B", "A", "B", false, 1L));
+	client.addEdge(new Edge("B-C", "B", "C", false, 1L));
+	client.addEdge(new Edge("C-D", "C", "D", false, 1L));
+	client.addEdge(new Edge("D-E", "D", "E", false, 1L));
+	client.addEdge(new Edge("E-A", "E", "A", false, 1L));
+	client.addEdge(new Edge("F-A", "F", "A", false, 1L));
+	client.addEdge(new Edge("F-B", "F", "B", false, 1L));
+	client.addEdge(new Edge("G-B", "G", "B", false, 1L));
+	client.addEdge(new Edge("G-C", "G", "C", false, 1L));
+	client.addEdge(new Edge("H-C", "H", "C", false, 1L));
+	client.addEdge(new Edge("H-D", "H", "D", false, 1L));
+	client.addEdge(new Edge("I-D", "I", "D", false, 1L));
+	client.addEdge(new Edge("I-E", "I", "E", false, 1L));
+	client.addEdge(new Edge("J-E", "J", "E", false, 1L));
+	client.addEdge(new Edge("J-A", "J", "A", false, 1L));
 
-With the network looking something like this:
+With the network looking something like this (after applying a Force Atlas layout):
 
-![image](docs/square-network.png)
+![image](docs/star-network.png)
 
 ## Example Spring Configuration
 
