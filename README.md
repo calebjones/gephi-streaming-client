@@ -96,7 +96,7 @@ Once built (see build info section below), this library can be incorporated into
     <dependency>
         <groupId>org.gephi</groupId>
         <artifactId>gephi-streaming-client</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
     </dependency>
 
 **NOTE - This artifact has not yet been released into a central maven repository.**
