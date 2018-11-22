@@ -23,12 +23,12 @@ import java.net.URISyntaxException;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpHost;
-import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
@@ -127,7 +127,7 @@ public class GephiStreamingApacheClientTest {
 		
 		DefaultHttpClient httpClient = PowerMockito.mock(DefaultHttpClient.class);
 		CredentialsProvider provider = new BasicCredentialsProvider();
-		HttpResponse response = mock(HttpResponse.class);
+		CloseableHttpResponse response = mock(CloseableHttpResponse.class);
 		StatusLine statusLine = mock(StatusLine.class);
 		
 		ArgumentCaptor<HttpHost> hostArg = ArgumentCaptor.forClass(HttpHost.class);
@@ -163,7 +163,7 @@ public class GephiStreamingApacheClientTest {
 		GephiClientConfig config = new GephiClientConfig("http://localhost");
 		
 		DefaultHttpClient httpClient = PowerMockito.mock(DefaultHttpClient.class);
-		HttpResponse response = mock(HttpResponse.class);
+		CloseableHttpResponse response = mock(CloseableHttpResponse.class);
 		StatusLine statusLine = mock(StatusLine.class);
 		
 		ArgumentCaptor<HttpHost> hostArg = ArgumentCaptor.forClass(HttpHost.class);
@@ -220,7 +220,7 @@ public class GephiStreamingApacheClientTest {
 		GephiClientConfig config = new GephiClientConfig("http://localhost");
 		
 		DefaultHttpClient httpClient = PowerMockito.mock(DefaultHttpClient.class);
-		HttpResponse response = mock(HttpResponse.class);
+		CloseableHttpResponse response = mock(CloseableHttpResponse.class);
 		StatusLine statusLine = mock(StatusLine.class);
 		
 		doReturn(HttpStatus.SC_INTERNAL_SERVER_ERROR).when(statusLine).getStatusCode();

@@ -11,11 +11,11 @@
     <parent>
         <groupId>org.gephi</groupId>
         <artifactId>gephi-streaming-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
     
     <properties>
-        <spring-version>3.2.3.RELEASE</spring-version>
+        <spring-version>4.3.17.RELEASE</spring-version>
     </properties>
 
     <dependencies>
@@ -83,21 +83,20 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
-            <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-module-junit4</artifactId>
-            <version>1.4.12</version>
+            <version>1.6.2</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-api-mockito</artifactId>
-            <version>1.4.12</version>
+            <version>1.6.2</version>
             <scope>test</scope>
         </dependency>
                 
