@@ -103,8 +103,9 @@ Once built (see build info section below), this library can be incorporated into
 
 # Build Info
 
-This library is built and tested using Maven 3.0.3 and Java 1.6 against Gephi 0.8.2 
-beta. Note that integration tests are enabled by default via the failsafe plugin which
+Version 0.0.1-SNAPSHOT of this library is built and tested using Maven 3.0.3 and Java 1.6 against Gephi 0.8.2 
+beta. Version 0.0.2-SNAPSHOT of this library is build and tested using Maven 3.5.4 and Java 1.8 against Gephi 0.9.2.
+Note that integration tests are enabled by default via the failsafe plugin which
 assumes a running Gephi master server with a workspace endpoint available at 
-`http://localhost:8080/workspace0`. Use `mvn install -DskipITs` to build w/o running 
+`http://localhost:8080/workspace1`. Use `mvn install -DskipITs` to build w/o running 
 the live integration tests.
