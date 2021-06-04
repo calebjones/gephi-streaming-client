@@ -20,7 +20,7 @@
         <apache-commons-io-version>1.3.2</apache-commons-io-version>
         <apache-commons-lang-version>3.0</apache-commons-lang-version>
         <apache-commons-codec-version>1.4</apache-commons-codec-version>
-        <apache-http-components-version>4.3.6</apache-http-components-version>
+        <apache-http-components-version>4.5.13</apache-http-components-version>
     </properties>
 
     <modules>
